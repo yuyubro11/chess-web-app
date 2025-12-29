@@ -9,7 +9,7 @@ const unicodePieces = {
 };
 
 function pieceToChar(piece){
-  if(!piece) return ''; 
+  if(!piece) return '';
   const ch = unicodePieces[piece.type];
   return piece.color === 'w' ? ch.toUpperCase() : ch;
 }
@@ -101,8 +101,8 @@ function minimax(g, depth, alpha, beta, isMax){
   if(depth === 0) return evaluateBoard(g);
   const moves = g.moves({verbose:true});
   if(moves.length === 0) return evaluateBoard(g);
--  if(isMax){
-+  if(isMax){
+
+  if(isMax){
     let maxEval = -Infinity;
     for(const m of moves){
       g.move(m);
