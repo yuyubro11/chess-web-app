@@ -1,22 +1,7 @@
-// Ensure chess.js is loaded; if not, load it dynamically then initialize
+// Single-player chess vs simple AI (minimax material eval)
 const boardEl = document.getElementById('board');
 const statusEl = document.getElementById('status');
 let selected = null;
-
-function loadChessThenStart(){
-  if(typeof Chess === 'function'){
-    startGame();
-    return;
-  }
-  const script = document.createElement('script');
-  script.src = 'https://cdnjs.cloudflare.com/ajax/libs/chess.js/1.0.0/chess.min.js';
-  script.onload = () => startGame();
-  script.onerror = () => {
-    statusEl.textContent = 'Failed to load chess.js library. Check network or vendor the file locally.';
-    console.error('Failed to load chess.js from CDN');
-  };
-  document.head.appendChild(script);
-}
 
 function startGame(){
   let game;
@@ -90,4 +75,4 @@ function startGame(){
 }
 
 // start
-loadChessThenStart();
+startGame();
