@@ -5,21 +5,26 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Chess Web App</title>
   <link rel="stylesheet" href="styles.css">
-
 </head>
 <body>
   <header>
-    <h1>Chess Web App — Starter</h1>
+    <h1>Chess Web App — Play vs AI</h1>
   </header>
   <main>
-    <div id="board" class="board">
-      <!-- Chessboard will render here -->
-      <p class="placeholder">Chessboard placeholder</p>
+    <div class="container">
+      <div id="board" class="board"></div>
+      <aside class="sidebar">
+        <div id="status">Loading...</div>
+        <div class="controls">
+          <button id="newGame">New Game</button>
+          <button id="undo">Undo</button>
+        </div>
+        <p>Click a piece, then click a target square. You play White; AI plays Black.</p>
+      </aside>
     </div>
-    <section id="controls">
-      <button id="newGame">New Game</button>
-    </section>
   </main>
+  <!-- chess.js library for move generation and rules -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/chess.js/1.0.0/chess.min.js"></script>
   <script src="script.js"></script>
 </body>
 </html>
